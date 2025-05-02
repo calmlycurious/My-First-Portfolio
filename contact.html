@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="topnav">
+                <a class="active" href="Portfolio.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="About.html">About</a>
+                <a href="contact.html">Contact</a>
+                <div class="search-container">
+                    <form style="margin-right: 18px;">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit">search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <h2>Contact Information</h2>
+        <div class="contact-cards">
+            <div class="card" onclick="handleCardClick('Email')">
+                <h3>Email</h3>
+                <p><a href="mailto:ashishgurung2708@gmail.com">ashishgurung2708@gmail.com</a></p>
+            </div>
+            <div class="card" onclick="handleCardClick('LinkedIn')">
+                <h3>LinkedIn</h3>
+                <p><a href="https://www.linkedin.com/in/ashish-gurung2708" target="_blank">linkedin.com/in/Ashish Gurung</a></p>
+            </div>
+            <div class="card" onclick="handleCardClick('Phone')">
+                <h3>Phone</h3>
+                <p><a href="tel:+917477684045">+91 7477684045</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function handleCardClick(type) {
+            alert('You clicked on the ' + type + ' card!');
+            console.log(type + ' card clicked');
+          }
+    </script>
+    <footer>Designed by Ashish Gurung</footer>
+</body>
+
+</html>

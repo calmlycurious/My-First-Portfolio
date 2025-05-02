@@ -10,10 +10,10 @@
     <header>
         <nav>
             <div class="topnav">
-                <a class="active" href="index.html">Home</a>
+                <a href="index.html">Home</a>
                 <a href="projects.html">Projects</a>
                 <a href="About.html">About</a>
-                <a href="contact.html">Contact</a>
+                <a class="active" href="contact.html">Contact</a>
                 <div class="search-container">
                     <form style="margin-right: 18px;">
                         <input type="text" placeholder="Search.." name="search">
@@ -24,30 +24,62 @@
         </nav>
     </header>
 
-    <section class="contact-section">
-        <h2>Contact Information</h2>
-        <div class="contact-cards">
-            <div class="card" onclick="handleCardClick('Email')">
-                <h3>Email</h3>
-                <p><a href="mailto:ashishgurung2708@gmail.com">ashishgurung2708@gmail.com</a></p>
-            </div>
-            <div class="card" onclick="handleCardClick('LinkedIn')">
-                <h3>LinkedIn</h3>
-                <p><a href="https://www.linkedin.com/in/ashish-gurung2708" target="_blank">linkedin.com/in/Ashish Gurung</a></p>
-            </div>
-            <div class="card" onclick="handleCardClick('Phone')">
-                <h3>Phone</h3>
-                <p><a href="tel:+917477684045">+91 7477684045</a></p>
-            </div>
-        </div>
-    </section>
+  <section class="contact-section">
+  <h2>Contact Information</h2>
+  <div class="contact-grid">
+    <div class="card" onclick="handleCardClick('Email')">
+      <h3>Email</h3>
+      <p><a href="mailto:ashishgurung2708@gmail.com">ashishgurung2708@gmail.com</a></p>
+    </div>
+    <div class="card" onclick="handleCardClick('LinkedIn')">
+      <h3>LinkedIn</h3>
+      <p><a href="https://www.linkedin.com/in/ashish-gurung2708" target="_blank">linkedin.com/in/Ashish Gurung</a></p>
+    </div>
+    <div class="card" onclick="handleCardClick('Phone')">
+      <h3>Phone</h3>
+      <p><a href="tel:+917477684045">+91 7477684045</a></p>
+    </div>
+    <div class="card" onclick="handleCardClick('GitHub')">
+      <h3>GitHub</h3>
+      <p><a href="https://github.com/calmlycurious" target="_blank">github.com/Ashish Gurung</a></p>
+    </div>
+  </div>
 
-    <script>
-        function handleCardClick(type) {
-            alert('You clicked on the ' + type + ' card!');
-            console.log(type + ' card clicked');
-          }
-    </script>
+  <h2 style="margin-top: 40px;">Send Me a Message</h2>
+  <form class="contact-form" onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Gmail">
+    <textarea id="message" placeholder="Your Message"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+   <script>
+  function handleCardClick(type) {
+    alert('You clicked on the ' + type + ' card!');
+    console.log(type + ' card clicked');
+  }
+
+  function validateForm() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+    if (!name || !email || !message) {
+      alert("Please fill in all fields.");
+      return false;
+    }
+
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid Gmail address.");
+      return false;
+    }
+
+    alert("Message sent successfully!");
+    return true;
+  }
+</script>
     <footer>Designed by Ashish Gurung</footer>
 </body>
 
